@@ -1,239 +1,157 @@
-# Beautiful Jekyll
-
-[![Gem Version](https://badge.fury.io/rb/beautiful-jekyll-theme.svg)](https://badge.fury.io/rb/beautiful-jekyll-theme)
-
-> By [Dean Attali](https://deanattali.com) &middot; [Demo](https://beautifuljekyll.com/)
-
-**Beautiful Jekyll** is a ready-to-use template to help you create a beautiful website quickly. Perfect for personal sites, blogs, or simple project websites.  [Check out a demo](https://beautifuljekyll.com) of what you'll get after just two minutes.  You can also look at [my personal website](https://deanattali.com) or [my consulting website](https://attalitech.com) to see it in use, or see [examples of websites](http://beautifuljekyll.com/examples) other people created using this theme.
-
-**If you enjoy Beautiful Jekyll, please consider [supporting me](https://github.com/sponsors/daattali). You'll also gain access to office hours and more features! ❤**
-
-## Table of contents
-
-- [Features](#features)
-- [Sponsors 🏆](#sponsors)
-- [**Build your website in 3 steps**](#build-your-website-in-3-steps)
-- [Plans](#plans)
-- [Add your own content](#add-your-own-content)
-- [Customizing parameters for each page](#customizing-parameters-for-each-page)
-- [Supported parameters](#supported-parameters)
-- [Featured users (success stories!)](#featured-users-success-stories)
-- [Next steps](#next-steps)
-- [Getting help](#getting-help)
-- [Credits and contributions](#contributions)
-
-# Features
-
-__Check out [*What's New?*](https://beautifuljekyll.com/updates/) to see the latest features!__
-
-- **SIMPLE**: The primary goal of Beautiful Jekyll is to allow literally *anyone* to create a website in a few minutes.
-- **Modern**: Uses the latest best practices and technologies to achieve nearly perfect scores on Google Chrome's Audit.
-- **Mobile-first**: Designed to look great on both large-screen and small-screen (mobile) devices.
-- **Highly customizable**: Many personalization settings such as changing the background colour/image, adding a logo.
-- **Flexible usage**: Use Beautiful Jekyll directly on GitHub or via a Ruby gem - choose the best [development method](#build-your-website-in-3-steps) for you.
-- **Battle-tested**: By using Beautiful Jekyll, you'll be joining 50,000+ users enjoying this theme since 2015.
-- **SEO and social media support**: Customize how your site looks on Google and when shared on social media.
-- **Comments support**: Add comments to any page using either [Disqus](https://disqus.com/), [Facebook comments](https://developers.facebook.com/docs/plugins/comments), [Utterances](https://utteranc.es/), [Staticman](https://staticman.net), [giscus](https://giscus.app), or [CommentBox](https://commentbox.io/).
-- **Tags**: Any blog post can be tagged with keywords, and an index page is automatically generated.
-- **Analytics**: Easily integrate Google Analytics, or other analytics platforms, to track visits to your website.
-- **Search**: Let users easily find any page using a Search button in the navigation bar.
-- **Photos support**: Any page can have a full-width cover photo and thumbnail.
-- **RSS**: An RSS feed is automatically created, so you can even host a podcast easily with Beautiful Jekyll.
-
-<h2 id="sponsors">Sponsors 🏆</h2>
-
-Developing and maintaining Beautiful Jekyll takes a lot of time and effort - thank you to anyone who helps fund this effort!
-
-- [DoFollow](https://dofollow.co.uk/)
-- [Varna Sri Raman](https://about.me/varna)
-
-**[Become a sponsor for Beautiful Jekyll and unlock new features\!](https://github.com/sponsors/daattali/sponsorships?tier_id=39856)**
-
-# Build your website in 3 steps
-
-There are a few different ways to build a website using Beautiful Jekyll, and this document will go through the simplest one: using a fork on GitHub. For most people (including myself!), this easy method is the recommended one.
-
-Even if you choose to use one of the [advanced installation methods](https://beautifuljekyll.com/getstarted/#install-steps-hard), I still suggest you read through the easy method first.
-
-## The easy way (recommended!)
-
-Getting started is *literally* as easy as 1-2-3 :smile:
-
-Scroll down to see the steps involved, but here is a 30-second video just as a reference as you work through the steps. If you don't already have a [GitHub account](https://github.com), you'll need to sign up.
-
-![Installation steps](https://beautifuljekyll.com/assets/img/install-steps.gif)
-
-### 1. Fork this project
-
-Click on the __*Fork*__ button at the top right corner of this page. Forking means that you're copying this entire project and all its files into your account. Do not click on the __*Create fork*__ button on the next page yet.
-
-### 2. Rename the repository to `YOURUSERNAME.github.io`
-
-You'll see the word "repository" used a lot in GitHub - it simply means "project". Under __*Repository name*__ you should see the name `beautiful-jekyll`, this is where you need to rename your project to `YOURUSERNAME.github.io` (replace `YOURUSERNAME` with your GitHub user name). It's important to use this exact name so that GitHub will recognize it and automatically create a website for this project.   
-
-> Tip: If you want to use a different URL for your website, check out the [FAQ](https://beautifuljekyll.com/faq/#custom-domain)
- 
-### 3. Customize your website settings
-
-Edit the `_config.yml` file to change any settings you want. To edit the file, first click on it to view the file, and on the next page click on the pencil icon to edit it (watch the video tutorial above if you're confused).  The settings in the file are self-explanatory and there are comments inside the file to help you understand what each setting does. Any line that begins with a hashtag (`#`) is a comment, and the other lines are actual settings. After changing the settings, click the green __*Commit changes*__ button to save these edits.
-
-> Note: In the video above, only one setting in the `_config.yml` file is edited, but you should go through the rest of the settings as well.
-
-### 4. Congratulations! You have a website!
-
-If you named your project correctly and made an edit to the config file, your website should be ready in a minute or two at `https://YOURUSERNAME.github.io`. Every time you make a change to any file, your website will get rebuilt and should be updated in about a minute or so. Your website will be initialized with several sample blog posts and a couple other pages.
-
-## The harder way (for advanced users)
-
-The instructions above explain how to use Beautiful Jekyll in the easiest way: by forking on GitHub. There are more [advanced installation methods](https://beautifuljekyll.com/getstarted/#install-steps-hard) that include either using GitHub Pages with remote themes, or using Ruby gems. They provide you with more control, but are only intended for advanced users.
-
-> Note: Beautiful Jekyll was primarily designed to be used as a GitHub theme, so you will not get any support if you use this theme via Ruby gems. 
-
-# Plans
-
-Beautiful Jekyll is, and always will be, free. But if you want to remove the Beautiful Jekyll ad from your website, use a Dark Mode skin, access office hours, or simply support the development efforts, [check out the different plans](https://beautifuljekyll.com/plans).
-
-# Add your own content
-
-To add pages to your site, you can either write a markdown file (`.md`) or you can write an HTML file. It's much easier to write markdown than HTML, so that's the recommended approach ([here's a great tutorial](https://markdowntutorial.com/) if you need to learn markdown in 5 minutes).
-
-To see an example of a markdown file, click on any file that ends in `.md`, for example [`aboutme.md`](./aboutme.md). On that page you can see some nicely formatted text (there's a word in bold, a link, a few bullet points), and if you click on the pencil icon to edit the file, you'll see the markdown code that generated the pretty text. Very easy! 
-
-In contrast, look at [`tags.html`](./tags.html). That's how your write HTML - not as pretty. So stick with markdown if you don't know HTML.
-
-Any markdown or HTML file that you create will be available on your website under `https://<yourusername>.github.io/<pagename>`. For example, if you create a file `about.md` (or `about.html`) then it'll exist at `https://<yourusername>.github.io/about`.
-
-Files you create inside the [`_posts`](./_posts) directory will be treated as blog entries. You can look at the existing files there to get an idea of how to write blog posts. Note the format of the blog post files - they must follow the naming convention of `YEAR-MONTH-DAY-title.md`. After you successfully add your own post, you can delete the existing files inside [`_posts`](./_posts) to remove the sample posts, as those are just demo posts to help you learn.
-
-# Customizing parameters for each page
-
-**One last important thing**: In order to have your new pages use this template and not just be plain HTML pages, **you must add [YAML front matter](https://jekyllrb.com/docs/front-matter/) to the top of each page**:
-
-
-```
 ---
+layout: post
+title: "Clash for Android 使用指南：节点每日更新、免费试用、配置教程与常见问题全解"
+date: 2025-07-09
+categories: [Clash, Android, 节点订阅]
+tags: [clash节点每日, clash免费订阅链接, clash试用, clash节点购买, clash配置文件]
+description: "Clash for Android 节点每日更新，免费订阅地址、节点试用、机场推荐一文打尽。适用于初学者到进阶用户的完整使用教程，包含配置方法、常见问题排查、流量购买、节点推荐与订阅技巧。"
+keywords: "clash节点每日, clash最新链接, clash注册免费试用, clash免费节点, clash机场推荐, clash配置文件, clash免费订阅, clash节点购买"
 ---
-```
 
-This is where you'll be able to give each page some extra parameters (such as a title, a subtitle, an image, etc - [below is a list of all parameters](#supported-parameters)). Add any parameters you want between these two dashed lines, for example:
+## 📱 什么是 Clash for Android？
 
-```
+Clash for Android 是一款基于 Clash 内核的安卓平台代理客户端，支持 vmess、vless、ss、trojan 等协议。用户可以通过导入订阅链接，连接全球节点，实现加速国内外访问，支持节点自动切换、规则分流、TUN 模式等多种功能，是目前 Android 用户首选科学上网工具之一。
+
 ---
-title: Contact me
-subtitle: Here you'll find all the ways to get in touch with me
+
+## 🔗 Clash 免费订阅链接每日更新（节点大全）
+
+为了方便广大用户，我们每日整理一批最新的 Clash 免费订阅地址与节点配置，涵盖中国大陆节点、外网高速节点、住宅 IP 节点、GitHub 免费配置等，适用于 Clash for Android：
+
+- ✅ **Clash免费订阅链接每日更新**：  
+  - `https://raw.githubusercontent.com/freefq/free/master/clash.yaml`  
+  - `https://clashnode.com/free.yaml`  
+  - `https://clashshare.github.io/clash.yaml`  
+
+- ✅ **Clash免费节点试用推荐（含高速节点）**：  
+  - 包含香港、日本、新加坡、美国等地区节点  
+  - 支持 Clash、Shadowrocket、小火箭等客户端  
+  - 多节点每日轮换更新  
+
+你可以将上述链接添加到 Clash for Android 客户端中，即可每日自动同步最新节点。
+
 ---
-```
 
-If you don't want to use any parameters on a page, you still need to use the two dashed lines. If you don't, then your file will be shown as-is without the Beautiful Jekyll template.
+## 💡 Clash for Android 安装与配置教程
 
-You can look at the top of [`aboutme.md`](https://raw.githubusercontent.com/daattali/beautiful-jekyll/master/aboutme.md) as an example.
+### 1. 安装 APK
+- 推荐从官方 GitHub 或可信平台下载安装最新版 Clash for Android：
+  - 下载地址：[Clash for Android GitHub](https://github.com/Kr328/ClashForAndroid/releases)
+  - 最新版本：v2.x.x，支持 Android 8 及以上系统
 
-**Important takeaway: ALWAYS add the YAML front matter, which is two lines of three dashes, to EVERY page. If you have any parameters, they go between the two lines.**
+### 2. 添加订阅链接
+- 打开 Clash → 点击右上角 “配置” → 添加配置 → 输入订阅链接 → 自动更新  
+- 常见配置文件类型：
+  - `.yaml / .yml`（Clash 配置格式）
+  - 支持通过二维码扫描添加（点击“扫码”）
 
-# Supported parameters
+### 3. 设置默认节点与规则
+- 配置文件导入后，进入 “代理” 页面，手动选择默认节点  
+- Clash支持根据国家、地区、平台等设定规则自动分流  
 
-Below is a list of the parameters that Beautiful Jekyll supports (any of these can be added to the YAML front matter of any page). Remember to also look in the `_config.yml` file to see additional site-wide settings. If there's a parameter that you want to apply to the entire site instead of one specific page, check out [this FAQ answer](https://beautifuljekyll.com/faq/#default-params).
+---
 
-## Main parameters
+## ✨ Clash 节点购买推荐（低至 0.5 元/月）
 
-These are the basic YAML parameters that you are most likely to use on most pages.
+很多用户会遇到 Clash 免费节点速度慢、节点全部超时、不能看流媒体的问题。此时你可以选择付费节点，以下为高性价比推荐：
 
-Parameter   | Description
------------ | -----------
-title       | Page or blog post title
-subtitle    | Short description of page or blog post that goes under the title
-tags        | List of tags to categorize the post. Separate the tags with commas and place them inside square brackets. Example: `[personal, analysis, finance]`
-cover-img   | Include a large full-width image at the top of the page. You can either provide the path to a single image (eg. `"/path/to/img"`) , or a list of images to cycle through (eg. `["/path/img1", "/path/img2"]`). If you want to add a caption to an image, then you must use the list notation (use `[]` even if you have only one image), and each image should be provided as `"/path/to/img" : "Caption of image"`.
-thumbnail-img | For blog posts, if you want to add a thumbnail that will show up in the feed, use `thumbnail-img: /path/to/image`. If no thumbnail is provided, then `cover-img` will be used as the thumbnail. You can use `thumbnail-img: ""` to disable a thumbnail.
-comments    | If you want do add comments to a specific page, use `comments: true`. Comments only work if you enable one of the comments providers (Facebook, disqus, staticman, utterances, giscus, CommentBox) in `_config.yml` file. Comments are automatically enabled on blog posts but not on other pages; to turn comments off for a specific post, use `comments: false`.
-mathjax     | If you want to use LaTeX formulas, you need to enable MathJax. Note that in MathJax you need to use `$$` and `\\(` to start and end expressions
+| 套餐 | 价格 | 流量 | 试用 | 推荐理由 |
+|------|------|------|------|-----------|
+| 🌟 星空云体验套餐 | ￥0.5/月 | 3节点 | 免费试用1天 | 新手首选，超低门槛 |
+| 🔥 星空云标准套餐 | ￥6/月 | 10节点 | 支持试用 | 支持 Netflix、ChatGPT、YouTube |
+| 🚀 飞鸟云漫画套餐 | ￥9/月 | 无限流量 | 高速日本漫画节点 | 日本地区专线，适合看动漫 |
 
-## Parameters for SEO and social media sharing
+👉 立即购买：[http://use.clashgomai.xyz/](http://use.clashgomai.xyz/)
 
-These parameters let you control what information shows up when a page is shown in a search engine (such as Google) or gets shared on social media (such as Twitter/Facebook).
+---
 
-Parameter   | Description
------------ | -----------
-share-title | A title for the page. If not provided, then `title` will be used, and if that's missing then the site title (from `_config.yml`) is used.
-share-description | A brief description of the page. If not provided, then `subtitle` will be used, and if that's missing then an excerpt from the page content is used.
-share-img   | The image to show. If not provided, then `cover-img` or `thumbnail-img` will be used if one of them is provided.
+## 📊 Clash 使用技巧大全
 
-## Less commonly used parameters
+### 如何查看 Clash 实际使用的 HTTP 代理端口？
+- 默认端口：`7890`（HTTP） `7891`（SOCKS5）  
+- 查看方法：设置 → 配置 → 本地端口管理
 
-These are parameters that you may not use often, but can come in handy sometimes.
+### 如何设置指定地区节点？
+- 方法一：手动选择节点分组中的 “香港” / “日本”等  
+- 方法二：使用规则分流功能，让特定网站走指定国家线路
 
-Parameter   | Description
------------ | -----------
-author      | Specify the author of a blog post (useful if a website has multiple authors).
-readtime    | If you want a post to show how many minutes it will take to read it, use `readtime: true`.
-show-avatar | If you have an avatar configured in the `_config.yml` but you want to turn it off on a specific page, use `show-avatar: false`.
-social-share | By default, every blog post has buttons to share the page on social media. If you want to turn this feature off, use `social-share: false`.
-nav-short   | By default, the navigation bar gets shorter after scrolling down the page. If you want the navigation bar to always be short on a certain page, use `nav-short: true`
-gh-repo   | If you want to show GitHub buttons at the top of a post, this sets the GitHub repo name (eg. `daattali/beautiful-jekyll`). You must also use the `gh-badge` parameter to specify what buttons to show.
-gh-badge  | Select which GitHub buttons to display. Available options are: [star, watch, fork, follow]. You must also use the `gh-repo` parameter to specify the GitHub repo.
-last-updated | If you want to show that a blog post was updated after it was originally released, you can specify an "Updated on" date.
-layout      | What type of page this is (default is `post` for blog posts and `page` for other pages). See _Page types_ section below for more information.
+### Clash怎么看流量使用情况？
+- 设置 → 数据统计 → 查看下载/上传数据总量  
+- 支持流量购买功能的机场会在后台查看剩余额度
 
-## Advanced parameters
+### Clash怎么换位置（切换节点）？
+- 点击主界面“代理”页面 → 手动选择其他节点  
+- 若节点全部超时，可尝试重启或更换订阅源
 
-These are advanced parameters that are only useful for people who need very fine control over their website.
+### Clash如何设置快捷键？
+- Android 原生不支持快捷键，但可借助第三方“任务自动化”App（如 Tasker）实现快速启动与切换配置
 
-Parameter   | Description
------------ | -----------
-footer-extra | If you want to include extra content below the social media icons in the footer, create an HTML file in the `_includes/` folder (for example `_includes/myinfo.html`) and set `footer-extra` to the name of the file (for example `footer-extra: myinfo.html`). Accepts a single file or a list of files.
-before-content | Similar to `footer-extra`, but used for including HTML before the main content of the page (below the title).
-after-content | Similar to `footer-extra`, but used for including HTML after the main content of the page (above the footer).
-head-extra   | Similar to `footer-extra`, but used if you have any HTML code that needs to be included in the `<head>` tag of the page.
-language    | HTML language code to be set on the page's &lt;html&gt; element.
-full-width  | By default, page content is constrained to a standard width. Use `full-width: true` to allow the content to span the entire width of the window.
-js          | List of local JavaScript files to include in the page (eg. `/assets/js/mypage.js`)
-ext-js      | List of external JavaScript files to include in the page (eg. `//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js`). External JavaScript files that support [Subresource Integrity (SRI)](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) can be specified using the `href` and `sri` parameters eg.<br/>`href: "//code.jquery.com/jquery-3.1.1.min.js"`<br/>`sri: "sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="`
-css         | List of local CSS files to include in the page
-ext-css      | List of external CSS files to include in the page. External CSS files using SRI (see `ext-js` parameter) are also supported.
+### Clash配置住宅IP的方法？
+- 需购买支持 Residential IP（住宅IP）的节点服务  
+- 添加方式同普通节点一致，订阅后导入即可使用
 
-## Page types
+---
 
-- **post** - To write a blog post, add a markdown or HTML file in the `_posts` folder. As long as you give it YAML front matter (the two lines of three dashes), it will automatically be rendered like a blog post. Look at the existing blog post files to see examples of how to use YAML parameters in blog posts.
-- **page** - Any page outside the `_posts` folder that uses YAML front matter will have a very similar style to blog posts.
-- **home** - The home layout is meant to act as the homepage of your blog posts - it will display all your blog posts, sorted from newest to oldest. A file using the `home` layout must be named `index.html` (not `index.md` or anything else!).
-- **minimal** - If you want to create a page with minimal styling (ie. without the bulky navigation bar and footer), assign `layout: minimal` to the YAML front matter.
-- If you want to completely bypass the template engine and just write your own HTML page, simply omit the YAML front matter. Only do this if you know how to write HTML!
+## 🚨 Clash 常见故障与解决方法
 
-# Featured users (success stories!)
+| 问题 | 原因 | 解决方法 |
+|------|------|----------|
+| Clash显示已连接但打不开谷歌 | DNS 泄漏 / 节点质量差 | 尝试 TUN 模式，换节点 |
+| Clash无法切换到此配置文件 | 格式不兼容 / 配置损坏 | 删除重导入配置 |
+| Clash开启 TUN 模式就没网了 | 系统权限不足 / 路由冲突 | 关闭分应用代理，重新授权 VPN |
+| Clash速度为零 | 免费节点拥堵 / 被限速 | 更换节点 / 升级套餐 |
 
-Visit the [Official website](http://beautifuljekyll.com/examples) to see sample websites using Beautiful Jekyll.
+---
 
-If you'd like to showcase yourself and join this list, [upgrading to the Individual plan](https://github.com/sponsors/daattali/sponsorships?&tier_id=7362) will give you that publicity plus some other rewards!
+## 🎯 Clash 免费试用节点/机场推荐
 
-# Next steps
+| 名称 | 免费试用 | 支持平台 | 节点数 |
+|------|----------|----------|--------|
+| 星空云 | ✅ 1天 | Clash / 小火箭 / V2Ray | 10+ |
+| 飞鸟云 | ✅ | Clash / V2RayN | 20+ |
+| 漫画机场 | ✅ | Clash / Shadowrocket | 15+ |
 
-Congratulations on making it this far! You now have all the tools to easily build a beautiful website for free. 
+👉 所有试用均可通过订阅链接导入 Clash for Android，无需登录、无需实名。
 
-- After you get comfortable with the basics of writing in markdown, I suggest taking a look at this [sample post](https://beautifuljekyll.com/2020-02-28-sample-markdown/) and [the code that created it](https://raw.githubusercontent.com/daattali/beautiful-jekyll/master/_posts/2020-02-28-sample-markdown.md) to learn some more advanced tips about markdown.
+---
 
-- I **highly recommend** going over the [*Frequently Asked Questions*](https://beautifuljekyll.com/faq/) to find out answers to questions you may not even know you have. Every few months I suggest checking the [*What's New?*](https://beautifuljekyll.com/updates/) page to see if there are new features, and learn [how to update your site to the newest version](https://beautifuljekyll.com/faq/#updating) when it's time.
+## 📥 Clash 配置文件/订阅地址总结
 
-- You can also check out the [advanced installation methods](https://beautifuljekyll.com/getstarted/#install-steps-hard) that give you a little more control but are harder to use. Keep in mind that Beautiful Jekyll was primarily designed to be used as a GitHub theme, so you will not get any support if you choose one of the Ruby installation methods. 
+| 类别 | 内容 |
+|------|------|
+| 配置文件免费 | 多个 GitHub/YAML 每日更新链接 |
+| clash配置免费节点 | 免费机场整理版，免注册直连 |
+| clash配置文件url免费 | `https://clashnode.net/config.yaml` |
+| clash免费的订阅链接 | `https://raw.githubusercontent.com/` 系列地址 |
+| clash免费高速节点 | 推荐试用：星空云 / 飞鸟云 |
+| clash节点每日更新 | 含中国大陆 / 香港 / 新加坡节点 |
 
-- Remember that Beautiful Jekyll is built on top of Jekyll. This means that reading through the [Jekyll documentation](https://jekyllrb.com/) will introduce you to many more features that you might find useful!
+---
 
-# Getting help
+## 💰 Clash 流量与节点购买小技巧
 
-Visit the [FAQ page](https://beautifuljekyll.com/faq) for answers to commonly asked questions.
+- Clash流量在哪里买？  
+  在机场官网（如星空云）后台购买 → 支持支付宝、微信、USDT、信用卡  
+- Clash节点续费 / 到期怎么办？  
+  登录后台 → 手动续费或购买新的订阅计划  
+- Clash节点购买方式  
+  选套餐 → 注册 → 付款 → 复制订阅 → 导入 Clash
 
-**If you choose to [become a sponsor](https://beautifuljekyll.com/plans/), you'll have access to my [office hours](https://beautifuljekyll.com/officehours/) where you can ask for help.** You can also use the [Discussions](https://github.com/daattali/beautiful-jekyll/discussions) area to try and get help from the community.
+---
 
-Beautiful Jekyll is used by 50,000+ people with wildly varying degrees of web skills, so it's impossible to answer all the questions that may arise. For any question that's not specifically related to Beautiful Jekyll and is more about Jekyll or web development in general, the answer can often be found on Google, in the [Jekyll documentation](https://jekyllrb.com/), or on the [Jekyll support forum](https://talk.jekyllrb.com/).
+## 📌 结语与建议
 
-# Contributions
+Clash for Android 是目前安卓平台上最强大的代理客户端之一，配合每日更新的免费订阅链接、免费试用节点、付费稳定节点等服务，用户可以实现高速、稳定、可定制的科学上网体验。
 
-Thank you to [all past contributors](https://github.com/daattali/beautiful-jekyll/graphs/contributors). If you find any problems or would like to contribute in any way, feel free to create a pull request/open an issue/send me a message.
+无论你是想要 **Clash免费订阅连接**、**试用机场节点**，还是需要稳定的付费配置，我们都建议：
+- 尽量避免公开过度使用的免费节点
+- 每月花几元就能享受更优体验
+- 合理设置规则，避免全局拖慢网络
 
-You can also contribute by becoming an [official sponsor](https://github.com/sponsors/daattali/sponsorships?tier_id=39856) to help keep Beautiful Jekyll well-maintained!
+💎 欢迎访问我们的节点服务平台：
+👉 [星空云：节点试用与购买](http://use.clashgomai.xyz/)
 
-# Credits
+---
 
-This template was not made *entirely* from scratch. I'd like to give special thanks to [Jekyll Now](https://github.com/barryclark/jekyll-now) and [Bootstrap Clean Blog](https://github.com/IronSummitMedia/startbootstrap-clean-blog), from whom I've taken several ideas initially.
-
-I'd also like to thank [Dr. Jekyll's Themes](https://drjekyllthemes.github.io/), [Jekyll Themes](http://jekyllthemes.org/), and another [Jekyll Themes](http://jekyllrc.github.io/jekyllthemes/) for featuring Beautiful Jekyll in their Jekyll theme directories.
+如你在 Clash 使用中遇到任何问题，可在评论区留言，我们会持续更新教程和订阅推荐！
 
