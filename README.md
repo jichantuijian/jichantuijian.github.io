@@ -36,7 +36,7 @@ Clash for Android 是一款基于 Clash 内核的安卓平台代理客户端，�
 
 ### 1. 安装 APK
 - 推荐从官方 GitHub 或可信平台下载安装最新版 Clash for Android：
-  - 下载地址：[Clash for Android GitHub](https://github.com/Kr328/ClashForAndroid/releases)
+  - 下载地址：[Clash for Android GitHub](https://github.com/search?q=Clash&type=repositories)
   - 最新版本：v2.x.x，支持 Android 8 及以上系统
 
 ### 2. 添加订阅链接
