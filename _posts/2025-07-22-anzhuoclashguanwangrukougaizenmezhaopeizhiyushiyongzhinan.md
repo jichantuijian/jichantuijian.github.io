@@ -3,7 +3,6 @@ layout: post
 title: "安卓Clash官网入口该怎么找？配置与使用指南"
 date: 2025-07-22 21:19:42
 tags: [clashxandroid, clashurl配置地址, ssr节点分享每日更新, clash配置购买网站, v2ray节点搭建, 节点订阅是干什么的, 可用免费节点APP]
-description: "在寻找安全的安卓Clash官网入口时,直接访问官方GitHub仓库是最稳妥的方式。打开手机浏览器,输入'GitHub'进入官网,在搜索栏输入'ClashForAndroid',认准开发者'Kr328'发布的仓库,避免下载第三方修改版。当前项目主页清晰标注了下载链接和SHA256校验码,建议每次更新时核对文件完整性。"
 ---
 
 
