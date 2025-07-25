@@ -2,7 +2,6 @@
 layout: post
 title: "鳄鱼机场官网如何访问？节点配置与使用全解析"
 tags: [毒药ssr,clash使用说明,v2ray节点推荐,clash加速节点,v2ray订阅转clash]
-keywords: "毒药ssr,clash使用说明,v2ray节点推荐,clash加速节点,v2ray订阅转clash"
 description: "作为专注于高速境外网络服务的平台,鳄鱼机场官网提供代理节点订阅服务。用户登录后可见核心功能包括:实时节点列表（含SSR/V2Ray/Trojan协议）、流量使用统计、订阅链接管理及测速工具。该平台采用订阅制模式,通过官网获取专属订阅链接是连接服务的核心环节。部分用户反馈其'香港BGP国际专线'延迟控制在80ms以内,特别适合高清视频场景。"
 ---
 
