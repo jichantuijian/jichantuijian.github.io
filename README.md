@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Clash for Android 使用指南：节点每日更新、免费试用、配置教程与常见问题全解"
-date: 2025-07-09
+date: 2025-07-31
 categories: [Clash, Android, 节点订阅]
 tags: [clash节点每日, clash免费订阅链接, clash试用, clash节点购买, clash配置文件]
 description: "Clash for Android 节点每日更新，免费订阅地址、节点试用、机场推荐一文打尽。适用于初学者到进阶用户的完整使用教程，包含配置方法、常见问题排查、流量购买、节点推荐与订阅技巧。"
