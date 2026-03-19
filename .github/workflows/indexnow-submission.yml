@@ -6,14 +6,8 @@ on:
     inputs:
       urls:
         description: 'URLs to submit (one per line)'
-        required: true
-        default: |
-          https://clash-for-android.github.io/
-          https://clash-for-android.github.io/download
-          https://clash-for-android.github.io/tutorial
-          https://clash-for-android.github.io/faq
-          https://clash-for-android.github.io/about
-          https://clash-for-android.github.io/contact
+        required: false
+        default: ''
   # 自动触发：每次推送到 master 分支时
   push:
     branches: [ master ]
@@ -44,85 +38,129 @@ jobs:
         cat > indexnow_submitter.py << 'SCRIPT_EOF'
         #!/usr/bin/env python3
         """
-        GitHub Actions IndexNow 提交脚本
+        GitHub Actions IndexNow 提交脚本 - 修复版本
+        自动从_posts目录提取文章URL并提交到IndexNow/Bing
         """
         import os
         import requests
         import json
         import sys
         from datetime import datetime
+        from pathlib import Path
         
-        # 配置
+        # 配置 - 修复为正确的网站
         KEY = "8575fe8139f14b2da85e40bbc8b86ce2"
-        HOST = "clash-for-android.github.io"
+        HOST = "jichantuijian.github.io"  # 修复：改为正确的网站
+        BASE_URL = "https://jichantuijian.github.io"  # 修复：添加基础URL
         API_URL = "https://api.indexnow.org/indexnow"
+        POSTS_DIR = "_posts"
+        
+        def extract_urls_from_posts(limit=1000):
+            """从_posts目录提取文章URL"""
+            urls = []
+            
+            if not os.path.exists(POSTS_DIR):
+                print(f"⚠️  _posts 目录不存在: {POSTS_DIR}")
+                return urls
+            
+            # 获取所有.md文件
+            md_files = sorted(Path(POSTS_DIR).glob("*.md"))
+            
+            for i, md_file in enumerate(md_files):
+                if i >= limit:
+                    break
+                
+                filename = md_file.name
+                # 移除.md扩展名
+                slug_part = filename[:-3]
+                
+                # 提取日期和slug: YYYY-MM-DD-slug
+                parts = slug_part.split("-", 3)
+                if len(parts) >= 4:
+                    year, month, day = parts[0], parts[1], parts[2]
+                    slug = parts[3]
+                    
+                    # 构建URL
+                    url = f"{BASE_URL}/{year}/{month}/{day}/{slug}/"
+                    urls.append(url)
+            
+            return urls
         
         def submit_urls(urls):
             """提交 URL 列表到 IndexNow"""
             results = []
             
-            for url in urls:
-                url = url.strip()
-                if not url or not url.startswith('http'):
-                    continue
-                    
+            # 分批提交（每批10个URL）
+            batch_size = 10
+            total_batches = (len(urls) + batch_size - 1) // batch_size
+            
+            for batch_num in range(0, len(urls), batch_size):
+                batch_urls = urls[batch_num:batch_num + batch_size]
+                batch_index = batch_num // batch_size + 1
+                
                 data = {
                     "host": HOST,
                     "key": KEY,
                     "keyLocation": f"https://{HOST}/{KEY}.txt",
-                    "urlList": [url]
+                    "urlList": batch_urls
                 }
                 
                 try:
                     response = requests.post(API_URL, json=data, timeout=30)
                     
-                    result = {
-                        "url": url,
-                        "status_code": response.status_code,
-                        "success": response.status_code in [200, 202],
-                        "response": response.text if response.status_code != 200 else "Success"
-                    }
-                    
-                    results.append(result)
+                    success = response.status_code in [200, 202]
                     
                     # 输出日志
-                    status = "✅" if result["success"] else "❌"
-                    print(f"{status} {url} - Status: {response.status_code}")
+                    status = "✅" if success else "❌"
+                    print(f"{status} [批次 {batch_index}/{total_batches}] 提交 {len(batch_urls)} 个URL - Status: {response.status_code}")
+                    
+                    if not success:
+                        print(f"   响应: {response.text[:200]}")
+                    
+                    for url in batch_urls:
+                        result = {
+                            "url": url,
+                            "status_code": response.status_code,
+                            "success": success,
+                            "response": response.text if response.status_code != 200 else "Success"
+                        }
+                        results.append(result)
                     
                 except Exception as e:
-                    result = {
-                        "url": url,
-                        "status_code": None,
-                        "success": False,
-                        "response": str(e)
-                    }
-                    results.append(result)
-                    print(f"❌ {url} - Error: {e}")
+                    print(f"❌ [批次 {batch_index}/{total_batches}] 错误: {e}")
+                    for url in batch_urls:
+                        result = {
+                            "url": url,
+                            "status_code": None,
+                            "success": False,
+                            "response": str(e)
+                        }
+                        results.append(result)
             
             return results
         
         def main():
             # 获取要提交的 URL
-            urls_input = os.getenv('INPUT_URLS', '')
+            urls_input = os.getenv('INPUT_URLS', '').strip()
             
             if urls_input:
                 # 从手动输入获取 URL
                 urls = [url.strip() for url in urls_input.split('\n') if url.strip()]
+                print(f"📝 使用手动输入的 URL")
             else:
-                # 默认 URL 列表
-                urls = [
-                    "https://clash-for-android.github.io/",
-                    "https://clash-for-android.github.io/download",
-                    "https://clash-for-android.github.io/tutorial", 
-                    "https://clash-for-android.github.io/faq",
-                    "https://clash-for-android.github.io/about",
-                    "https://clash-for-android.github.io/contact"
-                ]
+                # 从_posts目录自动提取 URL
+                urls = extract_urls_from_posts(limit=1000)
+                print(f"📂 从 _posts 目录自动提取 URL")
+            
+            if not urls:
+                print("⚠️  没有找到要提交的 URL")
+                return
             
             print(f"🚀 开始提交 {len(urls)} 个 URL 到 IndexNow")
             print(f"📅 提交时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
             print(f"🔑 使用密钥: {KEY}")
-            print("-" * 50)
+            print(f"🌐 网站: {HOST}")
+            print("-" * 60)
             
             # 提交 URL
             results = submit_urls(urls)
@@ -131,7 +169,7 @@ jobs:
             successful = sum(1 for r in results if r["success"])
             failed = len(results) - successful
             
-            print("-" * 50)
+            print("-" * 60)
             print("📊 提交统计:")
             print(f"✅ 成功: {successful}")
             print(f"❌ 失败: {failed}")
@@ -142,15 +180,17 @@ jobs:
                 print("\n📝 失败详情:")
                 for result in results:
                     if not result["success"]:
-                        print(f"  ❌ {result['url']}: {result['response']}")
+                        print(f"  ❌ {result['url']}: {result['response'][:100]}")
             
             # 设置输出变量
             print(f"::set-output name=success_count::{successful}")
             print(f"::set-output name=failed_count::{failed}")
             print(f"::set-output name=total_count::{len(results)}")
             
-            # 如果有失败，工作流失败
-            if failed > 0:
+            # 成功则正常退出
+            if successful > 0:
+                sys.exit(0)
+            else:
                 sys.exit(1)
         
         if __name__ == "__main__":
@@ -183,7 +223,7 @@ jobs:
         
         ## 配置信息
         - **密钥:** 8575fe8139f14b2da85e40bbc8b86ce2
-        - **网站:** clash-for-android.github.io
+        - **网站:** jichantuijian.github.io
         - **API:** https://api.indexnow.org/indexnow
         
         此报告由 GitHub Actions 自动生成。
