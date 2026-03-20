@@ -81,7 +81,7 @@ jobs:
                     slug = parts[3]
                     
                     # 构建URL
-                    url = f"{BASE_URL}/{year}/{month}/{day}/{slug}/"
+                    url = f"{BASE_URL}/{year}-{month}-{day}-{slug}/"
                     urls.append(url)
             
             return urls
