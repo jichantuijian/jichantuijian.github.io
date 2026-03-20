@@ -1,0 +1,20 @@
+<!-- Latest Posts Widget -->
+<aside class="latest-posts-widget">
+  <div class="widget-header">
+    <h3 class="widget-title">
+      <i class="fas fa-fire"></i> 最新文章
+    </h3>
+  </div>
+  <div class="widget-content">
+    <ul class="latest-posts-list">
+      {% for post in site.posts limit: 8 %}
+      <li class="latest-post-item">
+        <a href="{{ post.url | absolute_url }}" class="latest-post-link" title="{{ post.title | strip_html }}">
+          <span class="post-title">{{ post.title | strip_html | truncatewords: 8 }}</span>
+          <span class="post-date">{{ post.date | date: "%m-%d" }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</aside>

@@ -1,0 +1,28 @@
+<!-- Breadcrumb Navigation -->
+{% if page.id %}
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+  <div class="breadcrumb-container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{{ '/' | absolute_url }}" title="首页">
+          <i class="fas fa-home"></i> 首页
+        </a>
+      </li>
+      {% if page.categories %}
+        {% for category in page.categories %}
+        <li class="breadcrumb-item">
+          <a href="{{ '/categories' | absolute_url }}#{{ category }}" title="{{ category }}">
+            {{ category }}
+          </a>
+        </li>
+        {% endfor %}
+      {% endif %}
+      <li class="breadcrumb-item active" aria-current="page">
+        <span title="{{ page.title | strip_html }}">
+          {{ page.title | strip_html | truncatewords: 10 }}
+        </span>
+      </li>
+    </ol>
+  </div>
+</nav>
+{% endif %}

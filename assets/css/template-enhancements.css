@@ -1,0 +1,382 @@
+/* ============================================
+   Template Enhancement Styles
+   ============================================ */
+
+/* Breadcrumb Navigation Styles */
+.breadcrumb-nav {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.breadcrumb-container {
+  max-width: 100%;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem;
+}
+
+.breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.breadcrumb-item a {
+  color: #0066cc;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+  background-color: rgba(0, 102, 204, 0.1);
+  color: #0052a3;
+  text-decoration: underline;
+}
+
+.breadcrumb-item a i {
+  font-size: 0.9rem;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+  content: "/";
+  margin-left: 0.5rem;
+  color: #999;
+}
+
+.breadcrumb-item.active {
+  color: #666;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+}
+
+/* Sidebar Widgets Styles */
+.sidebar-widgets {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Latest Posts Widget */
+.latest-posts-widget,
+.random-posts-widget {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.latest-posts-widget:hover,
+.random-posts-widget:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.widget-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1.2rem;
+  color: white;
+}
+
+.widget-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.widget-title i {
+  font-size: 1.2rem;
+}
+
+.widget-content {
+  padding: 1.2rem;
+}
+
+/* Posts List Styles */
+.latest-posts-list,
+.random-posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.latest-post-item,
+.random-post-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.2s ease;
+}
+
+.latest-post-item:last-child,
+.random-post-item:last-child {
+  border-bottom: none;
+}
+
+.latest-post-item:hover,
+.random-post-item:hover {
+  background-color: #f9f9f9;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 4px;
+}
+
+.latest-post-link,
+.random-post-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  color: #333;
+  gap: 0.8rem;
+}
+
+.post-title {
+  flex: 1;
+  color: #0066cc;
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.latest-post-link:hover .post-title,
+.random-post-link:hover .post-title {
+  color: #0052a3;
+  text-decoration: underline;
+}
+
+.post-date {
+  background-color: #f0f0f0;
+  color: #666;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.latest-post-item:hover .post-date,
+.random-post-item:hover .post-date {
+  background-color: #e8e8e8;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .sidebar-widgets {
+    margin-top: 2rem;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  
+  .latest-posts-widget,
+  .random-posts-widget {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .breadcrumb-nav {
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .breadcrumb {
+    gap: 0.3rem;
+  }
+  
+  .breadcrumb-item a {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .breadcrumb-item:not(:last-child)::after {
+    margin-left: 0.3rem;
+  }
+  
+  .sidebar-widgets {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .latest-posts-widget,
+  .random-posts-widget {
+    flex: none;
+  }
+  
+  .widget-header {
+    padding: 1rem;
+  }
+  
+  .widget-title {
+    font-size: 1rem;
+  }
+  
+  .widget-content {
+    padding: 1rem;
+  }
+  
+  .latest-post-link,
+  .random-post-link {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+  
+  .post-date {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .breadcrumb-nav {
+    padding: 0.6rem;
+  }
+  
+  .breadcrumb-item a {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.85rem;
+  }
+  
+  .widget-header {
+    padding: 0.8rem;
+  }
+  
+  .widget-title {
+    font-size: 0.95rem;
+  }
+  
+  .widget-title i {
+    font-size: 1rem;
+  }
+  
+  .widget-content {
+    padding: 0.8rem;
+  }
+  
+  .latest-post-item,
+  .random-post-item {
+    padding: 0.6rem 0;
+  }
+  
+  .post-title {
+    font-size: 0.9rem;
+  }
+  
+  .post-date {
+    font-size: 0.8rem;
+  }
+}
+
+/* Dark Mode Support (Optional) */
+@media (prefers-color-scheme: dark) {
+  .breadcrumb-nav {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  }
+  
+  .breadcrumb-item a {
+    color: #63b3ed;
+  }
+  
+  .breadcrumb-item a:hover {
+    background-color: rgba(99, 179, 237, 0.1);
+    color: #90cdf4;
+  }
+  
+  .breadcrumb-item:not(:last-child)::after {
+    color: #666;
+  }
+  
+  .breadcrumb-item.active {
+    color: #cbd5e0;
+  }
+  
+  .latest-posts-widget,
+  .random-posts-widget {
+    background: #2d3748;
+  }
+  
+  .widget-content {
+    color: #e2e8f0;
+  }
+  
+  .latest-post-item,
+  .random-post-item {
+    border-bottom-color: #4a5568;
+  }
+  
+  .latest-post-item:hover,
+  .random-post-item:hover {
+    background-color: #374151;
+  }
+  
+  .latest-post-link,
+  .random-post-link {
+    color: #e2e8f0;
+  }
+  
+  .post-title {
+    color: #63b3ed;
+  }
+  
+  .latest-post-link:hover .post-title,
+  .random-post-link:hover .post-title {
+    color: #90cdf4;
+  }
+  
+  .post-date {
+    background-color: #4a5568;
+    color: #cbd5e0;
+  }
+  
+  .latest-post-item:hover .post-date,
+  .random-post-item:hover .post-date {
+    background-color: #5a6b81;
+  }
+}
+
+/* Animation Effects */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.breadcrumb-nav,
+.latest-posts-widget,
+.random-posts-widget {
+  animation: slideIn 0.4s ease-out;
+}
+
+/* Print Styles */
+@media print {
+  .breadcrumb-nav,
+  .sidebar-widgets {
+    display: none;
+  }
+}
