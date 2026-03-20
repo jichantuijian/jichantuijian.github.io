@@ -2,12 +2,12 @@
 <aside class="random-posts-widget">
   <div class="widget-header">
     <h3 class="widget-title">
-      <i class="fas fa-random"></i> 随机推荐
+      <i class="fas fa-dice"></i> 随机推荐
     </h3>
   </div>
   <div class="widget-content">
     <ul class="random-posts-list">
-      {% assign posts = site.posts | shuffle %}
+      {% assign posts = site.posts | sort: 'date' | reverse %}
       {% for post in posts limit: 5 %}
       <li class="random-post-item">
         <a href="{{ post.url | absolute_url }}" class="random-post-link" title="{{ post.title | strip_html }}">
